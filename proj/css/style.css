@@ -1,0 +1,532 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Tools */
+/* ===========================
+   Tools/Helpers
+   =========================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, .btns:before, .view:before,
+.clearfix:after,
+.btns:after,
+.view:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after, .btns:after, .view:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix, .btns, .view {
+  *zoom: 1;
+}
+
+/* =Layout
+------------------- */
+.ul-list-inline li {
+  display: inline-block;
+}
+
+/* =Wordpress alignment
+-------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.txtleft {
+  text-align: left;
+}
+
+.txtright {
+  text-align: right;
+}
+
+.list, .list-hover, .mail, .input-group-addon.send:before, .phone, .input-group-addon.call:before, .plt, .plt-hover, .back {
+  background: url(/img/sprites.png) no-repeat;
+}
+
+.list {
+  background-position: 0 0;
+  width: 28px;
+  height: 20px;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.list:hover, .list.active {
+  background-position: 0 -30px;
+}
+
+.mail, .input-group-addon.send:before {
+  background-position: -30px 0;
+  width: 14px;
+  height: 10px;
+}
+
+.phone, .input-group-addon.call:before {
+  background-position: -30px -20px;
+  width: 16px;
+  height: 16px;
+}
+
+.plt {
+  background-position: -50px 0;
+  width: 25px;
+  height: 25px;
+  margin-left: 30px;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.plt:hover, .plt.active {
+  background-position: -50px -25px;
+}
+
+.back {
+  background-position: -80px 0;
+  width: 26px;
+  height: 26px;
+}
+
+/* Base */
+/* ===========================
+   Base
+   =========================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5;
+  background: url(/img/background.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: black;
+}
+
+::-moz-selection {
+  background: #555;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #555;
+  color: #fff;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 82px auto;
+}
+
+.name {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.btns {
+  margin-bottom: 18px;
+}
+
+.add {
+  background: #eae7ec;
+  line-height: 34px;
+  font-size: 14px;
+  padding: 0 25px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  float: left;
+}
+.add:hover {
+  background: #e3dee5;
+}
+
+.views {
+  float: right;
+}
+
+.view {
+  background: #edeaec;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.contact {
+  padding: 15px 0;
+}
+.contact__item {
+  display: inline-block;
+  margin: 0 15px 5px;
+  text-align: center;
+}
+
+table {
+  margin: 35px 20px;
+}
+
+thead {
+  border-bottom: 2px solid #ddd;
+}
+thead td {
+  font-weight: bold;
+}
+
+tr {
+  line-height: 32px;
+}
+
+td {
+  padding-left: 11px;
+}
+
+td:nth-child(1) {
+  width: 29px;
+}
+
+td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+  width: 160px;
+}
+
+.upload-photo, .upload-info {
+  float: left;
+  width: 50%;
+  margin-top: 38px;
+  margin-bottom: 80px;
+}
+
+.pic {
+  border: 1px solid #CCC;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 7px;
+}
+
+.upload-wrapper {
+  text-align: left;
+  width: 268px;
+  margin: auto;
+}
+
+.upload-photo-wrapper {
+  margin: auto;
+  width: 200px;
+}
+
+/* Layout */
+/* ==|====================
+   Layout/Footer
+   ======================= */
+/* ==|====================
+   Layout/Header
+   ======================= */
+/* ==|====================
+   Layout/Nav
+   ======================= */
+/* Modules */
+/* ==|====================
+   Module/Icons
+   ======================= */
+/* ==|====================
+   Base/Form
+   ======================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+textarea {
+  font-size: 1em;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #666;
+  padding: .5em;
+  border: 1px solid #bfbfbf;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #f7f7f7;
+}
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #bbbbbb;
+}
+input[type="text"]:-moz-placeholder,
+input[type="email"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+input[type="date"]:-moz-placeholder,
+input[type="search"]:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #bbbbbb;
+}
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="date"]:-ms-input-placeholder,
+input[type="search"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover,
+input[type="search"]:hover,
+textarea:hover {
+  border-color: #a5a5a5;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  border-color: #999;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: none !important;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  margin-bottom: 13px;
+  display: table;
+  position: relative;
+  border-collapse: separate;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-group-addon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 38px;
+  background-color: #EEE;
+  position: relative;
+  border-right: 1px solid #ccc;
+}
+.input-group-addon:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.save-btn, .reset-btn {
+  line-height: 30px;
+  width: 91px;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.save-btn {
+  float: left;
+}
+
+.reset-btn {
+  float: right;
+}

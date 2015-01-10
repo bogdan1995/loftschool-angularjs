@@ -1,7 +1,9 @@
 extends ../_layouts/layout.jade
 
 block title
-    title Article Title
+    title Angular Notebook
 
 block content
-    .container Hello, world!
+    .container
+        h3.name Контакты
+        ng-view

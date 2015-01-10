@@ -24,7 +24,7 @@ gulp.task('connect', function () {
         livereload: true,
         port: 8000
     });
-    opn('http://localhost:8000/');
+    //opn('http://localhost:8000/');
 });
 
 gulp.task('css', function() {
@@ -32,6 +32,8 @@ gulp.task('css', function() {
         .pipe(compass({
             css: 'proj/css',
             sass: 'proj/scss',
+            image: 'proj/img',
+            relative: true,
             require: ['compass']
         }))
         .pipe(autoprefixer({

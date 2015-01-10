@@ -2,16 +2,23 @@
    Base
    =========================== */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: $font1;
     font-weight: 300;
     font-size: 1em;
     line-height: 1.5;
+    background: url(/img/background.png);
+    background-size: cover;
 }
 
 a {
     color: $color-link;
     text-decoration: none;
+    display: inline-block;
     @include transition();
 
     &:hover {
@@ -37,4 +44,118 @@ hr {
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: 82px auto;
+}
+
+.name {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.btns {
+    @extend .clearfix;
+    margin-bottom: 18px;
+}
+
+.add {
+    background: $btn-background;
+    line-height: 34px;
+    font-size: 14px;
+    padding: 0 25px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    float: left;
+    &:hover {
+        background: darken($btn-background, 3%);
+    }
+}
+
+
+
+.views {
+    float: right;
+}
+
+.view {
+    background: #edeaec;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    @extend .clearfix;
+}
+
+.contact {
+    padding: 15px 0;
+    &__item {
+        display: inline-block;
+        margin: 0 15px 5px;
+        text-align: center;
+    }
+}
+
+table {
+    margin: 35px 20px;
+}
+
+thead {
+    border-bottom: 2px solid #ddd;
+    & td {
+        font-weight: bold;
+    }
+}
+
+tr {
+    line-height: 32px;
+}
+
+
+td {
+    padding-left: 11px;
+}
+
+td:nth-child(1) {
+    width: 29px;
+}
+
+td:nth-child(2), td:nth-child(3),td:nth-child(4) {
+    width: 160px;
+}
+
+.upload-photo, .upload-info {
+    float: left;
+    width: 50%;
+    margin-top: 38px;
+    margin-bottom: 80px;
+}
+
+.pic {
+    border: 1px solid #CCC;
+    border-radius: 9px;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+.upload-wrapper {
+    text-align: left;
+    width: 268px;
+    margin: auto;
+}
+
+
+.upload-photo-wrapper {
+    margin: auto;
+    width: 200px;
 }

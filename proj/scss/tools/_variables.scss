@@ -8,8 +8,7 @@
 $audio-canvas-video: false; // True | False
 
 // Fonts
-$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font2: Georgia, serif;
+$font1: "Segoe UI","Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // = Colors
 // -----------------------------
@@ -20,27 +19,18 @@ $blue: #1894c4;
 $facebook: #3b5998;
 $twitter: #43bfe1;
 
-$color1: $red;
-$color2: $blue;
 
-// Text
-$color-text-base: #212121;
-
-// link
-$color-link: $color1;
-$color-link-hover: darken($color1, 10%);
 
 // Mixin Placeholder
 $color-mixin-placeholder: #cdcdcd;
 
-// Selection
-$color-selection: $color1;
 
 // Btn
 $bg-btn: #555;
 $bg-btn-hover: darken($bg-btn, 10%);
 $clr-btn: #212121;
 $clr-btn-hover: darken($clr-btn, 10%);
+$btn-background: #eae7ec;
 
 // = Grid
 // -----------------------------
@@ -63,3 +53,13 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 $width-large: 75em; // 1200/16
 $width-medium: 62em; // 992/16
 $width-small: 48em; // 768/16
+
+$color1: $bg-btn;
+$color2: $bg-btn-hover;
+
+// Text
+$color-text-base: #212121;
+
+// link
+$color-link:  $bg-btn;
+$color-link-hover: darken( $bg-btn, 50%);
