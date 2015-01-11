@@ -1,7 +1,10 @@
 <div class="btns"><a href="#/add" class="add">Добавить</a>
-    <div class="views"><a href="#/list" class="list active"></a><a href="#/plate" class="plt"></a></div>
+<div class="views">
+    <a href="" class="list" ng-click="status = true" ng-init="status = true" ng-class="{'active' : status}"></a>
+    <a href="" class="plt" ng-click="status = false" ng-class="{'active' : !status}"></a>
 </div>
-<div class="view">
+</div>
+<div class="view" ng-show="status">
     <table>
         <thead>
         <tr>
@@ -13,13 +16,22 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Богдан</td>
-            <td>Пономаренко</td>
-            <td>+79818609215</td>
-            <td>ponomarenko.bogdan@yandex.ru</td>
+        <tr ng-repeat = "item in inbox">
+            <td>{{parseInt(item.$id)+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.surname}}</td>
+            <td>{{item.number}}</td>
+            <td>{{item.email}}</td>
         </tr>
         </tbody>
     </table>
+    <ul class="contact" ng-show="!status">
+        <li class="contact__item">
+            <div class="photo"><img src="http://lorempixel.com/135/135/cats"></div>
+            <p>Фамилия Имя</p>
+            <p>+79818609211</p>
+        </li>
+    </ul>
 </div>
+
+

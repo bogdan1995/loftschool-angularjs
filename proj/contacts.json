@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "Ivan",
+    "surname" : "Ivanov",
+    "number" : "+79819876543",
+    "email" : "email@domain.com",
+    "photo" : "http://lorempixel.com/135/135/cats"
+  }
+]
