@@ -5,8 +5,13 @@ notebookApp.factory("ContactFactory", function ($firebase, fbURL) {
         sync = $firebase(ref),
         exports = {};
 
-    exports.getInbox = function () {
+    exports.getContacts = function () {
         return sync.$asArray();
+    };
+
+
+    exports.addContact = function (text) {
+        return sync.$asArray().$add(text);
     };
 
     return exports;

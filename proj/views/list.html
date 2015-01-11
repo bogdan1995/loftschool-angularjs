@@ -26,10 +26,10 @@
         </tbody>
     </table>
     <ul class="contact" ng-show="!status">
-        <li class="contact__item">
-            <div class="photo"><img src="http://lorempixel.com/135/135/cats"></div>
-            <p>Фамилия Имя</p>
-            <p>+79818609211</p>
+        <li class="contact__item" ng-repeat="item in inbox">
+            <div class="photo"><img ng-src={{item.photo}}></div>
+            <p>{{item.surname}} {{item.name}}</p>
+            <p>{{item.number}}</p>
         </li>
     </ul>
 </div>

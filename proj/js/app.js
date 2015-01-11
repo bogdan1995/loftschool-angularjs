@@ -11,7 +11,8 @@ notebookApp.config(function ($routeProvider) {
 			controller: 'ViewCtrl'
 		})
 		.when('/add', {
-			templateUrl: 'views/add.html'
+			templateUrl: 'views/add.html',
+			controller: 'ViewCtrl'
 		})
 		.otherwise({redirectTo: '/view'})
 });
